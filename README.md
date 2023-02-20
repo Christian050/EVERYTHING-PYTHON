@@ -1,3 +1,2 @@
 # Active
-Python made easy for beginners.
-Working on this repository.
+Python made easy for beginners (Working on this repository).
