@@ -1,12 +1,12 @@
 first = 'Christian'
 last = 'Smith'
 
-# Concatination
+# Concatenation
 message = first + ' [' + last + '] is a coder'
 print(message)
 
 
-# Using formated string(s)
+# Using formatted string(s)
 msg = f'{first} [{last}] is a coder'
 print(msg)
 
