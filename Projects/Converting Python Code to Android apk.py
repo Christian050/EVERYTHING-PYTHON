@@ -14,7 +14,7 @@ if __name__ == '__main__':
     MainApp().run()
 
 '''
-In Google collab create a new notebook
+In Google Collab create a new notebook
 
 Write code in 'Kivy.txt' one by one in the notebook(code)
 
