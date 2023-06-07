@@ -24,13 +24,13 @@ print(new_path.rmdir())     # Returns None as well.
 # Search for files and folders in current path.
 search_path = Path('Exercises\Exercise 11')
 
-for files in search_path.glob('*.py'):     # '*' prints all files and folders in current path. Extensions can be added.
+# '*' prints all files and folders in current path. Extensions can be added.
+for files in search_path.glob('*.py'):
     print(files)
-    
-    
+
+
 # Nothing is returned if file or folder isn't found in directory.
 search_path = Path('Exercise')
 
 for files in search_path.glob('*'):
     print(files)
-    
