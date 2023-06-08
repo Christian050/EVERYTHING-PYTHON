@@ -1,2 +1,2 @@
-# Active
-Python made easy for beginners (Working on this repository).
+# Main (Active)
+Working on this repository.
