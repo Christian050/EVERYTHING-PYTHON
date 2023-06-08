@@ -1,5 +1,3 @@
-#  3:56:12
-
 import openpyxl
 from openpyxl.chart import BarChart, Reference
 
@@ -17,9 +15,9 @@ class Code:
         for row in range(2, self.sheet.max_row + 1):
             self.cell = self.sheet.cell(row, self.calcRow)
             # Modify Here.
-            self.product = self.cell * .9
-            self.productCell = self.sheet.cell(row, self.sheet.max_row + 1)
-            self.productCell.value = self.product
+            self.cell.value = self.cell.value * 0.9
+            self.productCell = self.sheet.cell(row, self.calcRow + 1)
+            self.productCell.value = self.cell.value
 
     def DrawChart(self, minCol, maxCol):
         self.maxRow = self.sheet.max_row
@@ -31,12 +29,19 @@ class Code:
         self.values = Reference(self.sheet,
                                 min_row=2,
                                 max_row=self.maxRow,
-                                max_col=self.minCol)
+                                min_col=self.minCol,
+                                max_col=self.maxCol)
 
         self.chart = BarChart()
         self.chart.add_data(self.values)
 
-        self.sheet.add(self.chart, 'E2')
+        self.sheet.add_chart(self.chart, 'E2')
 
         # Overwrites the excel file unless otherwise specified.
-        self.filename.save(self.filename)
+        self.filename.save(self.filename.filename)
+
+
+# Example usage:
+code = Code('example.xlsx', 'Sheet1')
+code.ProcessWorkbook(3)
+code.DrawChart(1, 3)
